@@ -1,3 +1,5 @@
+begin transaction
+
 CREATE TEMP TABLE tmp_source_4 as
 select
 	order_id,
@@ -168,3 +170,5 @@ when not matched then
 	t.order_completion_date,
 	t.order_status,
 	current_timestamp);
+
+commit transaction
